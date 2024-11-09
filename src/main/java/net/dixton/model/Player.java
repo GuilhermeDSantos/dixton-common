@@ -10,13 +10,14 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+
 import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
 @ToString
-public class Player {
+public abstract class Player {
     @Id
     private Long id;
 
