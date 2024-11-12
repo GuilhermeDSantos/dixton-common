@@ -1,4 +1,4 @@
-package net.dixton.model;
+package net.dixton.model.account;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +17,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @ToString
-public abstract class Player {
+public abstract class Account {
     @Id
     private Long id;
 

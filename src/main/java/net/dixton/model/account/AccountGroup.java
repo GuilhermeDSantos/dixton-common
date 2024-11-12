@@ -1,9 +1,10 @@
-package net.dixton.model;
+package net.dixton.model.account;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import net.dixton.model.Group;
 import net.dixton.model.server.Server;
 
 import java.time.Instant;
@@ -12,14 +13,14 @@ import java.time.Instant;
 @Getter
 @Setter
 @ToString
-public class PlayerGroup {
+public class AccountGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "player_id", nullable = false)
-    private Player player;
+    @JoinColumn(name = "account_id", nullable = false)
+    private Account account;
 
     @ManyToOne
     @JoinColumn(name = "group_id", nullable = false)
