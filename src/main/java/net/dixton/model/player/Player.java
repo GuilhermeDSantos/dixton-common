@@ -6,17 +6,13 @@ import lombok.Setter;
 import lombok.ToString;
 import net.dixton.model.account.Account;
 
-@Entity
+@MappedSuperclass
 @Getter
 @Setter
 @ToString
-public class Player {
+public abstract class Player {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "account_id")
     private Account account;
 
