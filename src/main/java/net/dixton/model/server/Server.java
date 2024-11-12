@@ -13,6 +13,7 @@ import net.dixton.model.Role;
 public class Server {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true)
@@ -20,7 +21,8 @@ public class Server {
 
     private Integer port, maxPlayers;
 
-    private Boolean whitelisted;
+    @Column(columnDefinition = "TINYINT(1)")
+    private boolean whitelisted;
 
     @ManyToOne
     @JoinColumn(name = "default_role_id")
