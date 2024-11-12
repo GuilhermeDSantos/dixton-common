@@ -1,23 +1,16 @@
 package net.dixton.model.player;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import net.dixton.model.account.Account;
 
 @Entity
 @Getter
 @Setter
 @ToString
-public class MainLobbyPlayer {
+public class MainLobbyPlayer extends Player {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @OneToOne
-    @JoinColumn(name = "account_id")
-    private Account account;
+    private Boolean playersHidden;
 
 }
