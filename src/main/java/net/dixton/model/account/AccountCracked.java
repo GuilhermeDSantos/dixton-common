@@ -12,7 +12,7 @@ import net.dixton.model.skin.Skin;
 @Getter
 @Setter
 @ToString
-public class CrackedAccount extends Account {
+public class AccountCracked extends Account {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "skin_id")

@@ -13,7 +13,7 @@ import net.dixton.model.skin.SkinData;
 @Getter
 @Setter
 @ToString
-public class PremiumAccount extends Account {
+public class AccountPremium extends Account {
 
     @ManyToOne
     @JoinColumn(name = "skin_id")
