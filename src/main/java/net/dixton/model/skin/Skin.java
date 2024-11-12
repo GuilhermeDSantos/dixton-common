@@ -1,4 +1,4 @@
-package net.dixton.model;
+package net.dixton.model.skin;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

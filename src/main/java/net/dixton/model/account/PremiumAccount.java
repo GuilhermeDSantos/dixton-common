@@ -6,8 +6,8 @@ import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import net.dixton.model.Skin;
-import net.dixton.model.SkinData;
+import net.dixton.model.skin.Skin;
+import net.dixton.model.skin.SkinData;
 
 @Entity
 @Getter
