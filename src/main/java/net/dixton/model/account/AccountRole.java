@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import net.dixton.model.Group;
+import net.dixton.model.Role;
 import net.dixton.model.server.Server;
 
 import java.time.Instant;
@@ -13,7 +13,7 @@ import java.time.Instant;
 @Getter
 @Setter
 @ToString
-public class AccountGroup {
+public class AccountRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,8 +23,8 @@ public class AccountGroup {
     private Account account;
 
     @ManyToOne
-    @JoinColumn(name = "group_id", nullable = false)
-    private Group group;
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
 
     @ManyToOne
     @JoinColumn(name = "server_id")

@@ -14,11 +14,11 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Group {
+public class Role {
 
     @Id
     private Long id;
 
-    @OneToMany(mappedBy = "defaultGroup")
+    @OneToMany(mappedBy = "defaultRole")
     private List<Server> servers;
 }

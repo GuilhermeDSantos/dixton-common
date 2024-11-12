@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import net.dixton.model.Group;
+import net.dixton.model.Role;
 
 @Entity
 @Getter
@@ -23,10 +23,10 @@ public class Server {
     private Boolean whitelisted;
 
     @ManyToOne
-    @JoinColumn(name = "default_group_id")
-    private Group defaultGroup;
+    @JoinColumn(name = "default_role_id")
+    private Role defaultRole;
 
     @ManyToOne
-    @JoinColumn(name = "needed_group_id")
-    private Group neededGroup;
+    @JoinColumn(name = "needed_role_id")
+    private Role neededRole;
 }
