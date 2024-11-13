@@ -22,7 +22,7 @@ public class Server {
     private Integer port, maxPlayers;
 
     @Column(columnDefinition = "TINYINT(1)")
-    private boolean whitelisted;
+    private boolean whitelisted, autoStart;
 
     @ManyToOne
     @JoinColumn(name = "default_role_id")
