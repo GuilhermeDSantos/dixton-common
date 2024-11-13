@@ -14,7 +14,19 @@ import java.util.*;
  */
 public class DependencyInjector {
 
-    private final Map<Class<?>, Object> instances = new HashMap<>();
+    private static DependencyInjector instance;
+    private final Map<Class<?>, Object> instances;
+
+    private DependencyInjector() {
+        instances = new HashMap<>();
+    }
+
+    public static DependencyInjector getInstance() {
+        if (instance == null) {
+            instance = new DependencyInjector();
+        }
+        return instance;
+    }
 
     /**
      * Scans a package and loads all @Injectable classes.
