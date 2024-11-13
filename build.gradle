@@ -17,6 +17,8 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-core:2.18.1'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.1'
+    // https://mvnrepository.com/artifact/org.reflections/reflections
+    implementation 'org.reflections:reflections:0.10.2'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     compileOnly 'org.projectlombok:lombok:1.18.34'
