@@ -1,7 +1,10 @@
 package net.dixton.model.account;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
@@ -16,12 +19,24 @@ import java.util.UUID;
 @Getter
 @Setter
 @ToString
-public abstract class Account {
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "accountType"
+)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = AccountCracked.class, name = "cracked"),
+        @JsonSubTypes.Type(value = AccountPremium.class, name = "premium")
+})
+@NoArgsConstructor
+public class Account {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true)
-    private UUID uuid;
+    private UUID uniqueId;
 
     private String nick;
 

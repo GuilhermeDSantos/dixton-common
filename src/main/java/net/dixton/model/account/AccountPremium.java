@@ -12,7 +12,7 @@ import net.dixton.model.skin.SkinData;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 public class AccountPremium extends Account {
 
     @ManyToOne

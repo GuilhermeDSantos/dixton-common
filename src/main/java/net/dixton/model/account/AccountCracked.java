@@ -11,7 +11,7 @@ import net.dixton.model.skin.Skin;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 public class AccountCracked extends Account {
 
     @ManyToOne(optional = false)
